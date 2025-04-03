@@ -1,0 +1,9 @@
+#ifndef LITEACTORFRAMEWORK_UTILS_HPP
+#define LITEACTORFRAMEWORK_UTILS_HPP
+#include <iostream>
+
+namespace laf {
+
+}
+
+#endif //LITEACTORFRAMEWORK_UTILS_HPP

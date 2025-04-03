@@ -1,0 +1,12 @@
+#ifndef LITEACTORFRAMEWORK_MESSAGE_HPP
+#define LITEACTORFRAMEWORK_MESSAGE_HPP
+
+namespace laf {
+
+    class Message {
+
+    };
+
+}
+
+#endif //LITEACTORFRAMEWORK_MESSAGE_HPP
