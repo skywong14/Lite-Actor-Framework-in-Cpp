@@ -33,6 +33,7 @@ add_library(LiteActorFramework STATIC
         src/utils/laf_error.hpp
         src/utils/message.hpp
         src/utils/utils.hpp
+        src/utils/duration.hpp
 )
 
 set_target_properties(LiteActorFramework PROPERTIES LINKER_LANGUAGE CXX)

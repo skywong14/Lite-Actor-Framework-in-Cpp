@@ -8,7 +8,7 @@ Behavior 类用于描述 Actor Model 中 actor 的行为，通过封装一个 pa
 ```
 src/
 ├── actor/
-│   └── Behavior.hpp               # 对 partial_function.hpp 的封装
+│   └── Behavior.hpp               # 对 partial_function.hpp 的封装，并带有超时设置
 └── utils/
     ├── any_tuple.hpp              # 目前实现了 any_single， 支持单个任意类型的参数
     └── DSL/
@@ -58,3 +58,11 @@ partial_function 使用 std::vector 存储了一些列 bool(any_single&) 的函�
 partial_function 的 operator() 会遍历这些函数对象，直到找到一个返回 true 的函数对象，并将其传入的参数传递给 lambda 表达式。 这样就实现了对不同类型的输入做出不同的反应。
 
 同时 partial_function 支持用逗号拼接，但由于逗号运算的优先级太低，实际效果不好。
+
+**超时设置**
+
+在封装完 partial_function 后，Behavior 类还应当支持超时设置。
+
+通过 set_timeout(Duration timeout, function<void()> handler)，可以设置一个 Behavior 的超时限制和超时后的回调函数。（如果没有手动设置，则没有超时限制）
+
+但需要注意的是，Behavior 类本身只是存储了 timeout 及其 handler ，自动触发的功能需要配合 Actor 的消息事件轮询与定时处理器实现。
